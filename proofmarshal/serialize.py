@@ -58,6 +58,7 @@ representations that are less than the length of a hash return a so-called
 """
 
 DIGEST_LENGTH = 32
+NONCE_LENGTH = 32
 
 class DeserializationError(Exception):
     """Base class for all errors encountered during deserialization"""
@@ -331,6 +332,9 @@ class FixedBytes(Serializer):
 
 class Digest(FixedBytes):
     EXPECTED_LENGTH = DIGEST_LENGTH
+
+class Nonce(FixedBytes):
+    EXPECTED_LENGTH = NONCE_LENGTH
 
 class UInt(Serializer):
     """Serialization of unsigned integers"""
